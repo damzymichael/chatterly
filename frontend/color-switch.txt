@@ -1,0 +1,30 @@
+VINTAGE COLORS - INDEX.CSS TO TEMP.CSS EQUIVALENTS
+===================================================
+
+1. --vintage-cream: #F5EFE7
+   → Equivalent in temp.css: --background: oklch(0.9582 0.0152 90.2357)
+   Light cream/beige color
+
+2. --vintage-tan: #D4BFA8
+   → Equivalent in temp.css: --secondary: oklch(0.8846 0.0302 85.5655)
+   Warm tan/beige color
+
+3. --vintage-brown: #8B6F47
+   → Equivalent in temp.css: --primary: oklch(0.618 0.0778 65.5444)
+   Warm brown/tan color
+
+4. --vintage-dark-brown: #3E3B37
+   → Equivalent in temp.css: --foreground: oklch(0.376 0.0225 64.3434)
+   Dark neutral brown color
+
+5. --vintage-accent-teal: #7BA99E
+   → Equivalent in temp.css: --accent: oklch(0.8348 0.0426 88.8064)
+   Or: --muted: oklch(0.9239 0.019 83.0636)
+   Soft sage/neutral accent color
+
+NOTES:
+------
+- temp.css uses OKLch color space (more perceptually uniform)
+- Hex colors in index.css converted to OKLch values
+- OKLch format: oklch(lightness saturation hue)
+- temp.css integrates vintage palette into standard design tokens
