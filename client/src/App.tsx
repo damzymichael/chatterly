@@ -6,6 +6,7 @@ import { Toaster } from "sonner"
 import { ThemeProvider, useTheme } from "./components/theme-provider"
 import VerifyEmail from "./pages/auth/VerifyEmail"
 
+// Todo Create new chat route
 function App() {
   const { theme } = useTheme()
   return (
