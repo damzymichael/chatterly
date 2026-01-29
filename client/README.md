@@ -1,73 +1,79 @@
-# React + TypeScript + Vite
+  # Chatterly — Client
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+  Frontend for the Chatterly fullstack app. Built with React, TypeScript and Vite for fast local development.
 
-Currently, two official plugins are available:
+  ## Table of contents
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+  - Quick start
+  - Scripts
+  - Environment
+  - Project structure
+  - Features
+  - Contributing
+  - License
 
-## React Compiler
+  ## Quick start
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+  Prerequisites
 
-## Expanding the ESLint configuration
+  - Node.js 18+ and a package manager (npm, pnpm or yarn)
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+  Install dependencies and start the dev server:
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+  ```bash
+  cd client
+  npm install
+  npm run dev
+  ```
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+  Build for production:
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+  ```bash
+  npm run build
+  npm run preview
+  ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+  ## Scripts
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+  Key scripts available in `client/package.json`:
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+  - `npm run dev` — Start Vite dev server (local HMR)
+  - `npm run build` — Build production assets (runs `tsc -b` then `vite build`)
+  - `npm run preview` — Preview built assets locally
+  - `npm run lint` — Run ESLint across the client source
+
+  These are the canonical developer commands for the frontend.
+
+  ## Environment
+
+  Create a `.env` or `.env.local` in the `client/` folder for local overrides. Common variables:
+
+  - `VITE_API_BASE_URL` — Backend API base URL used by the client (e.g. `http://localhost:3000`)
+
+  Note: Vite exposes env variables with the `VITE_` prefix to the client code.
+
+  ## Project structure
+
+  - `src/` — Application source
+    - `components/` — Reusable UI components and primitives
+    - `pages/` — Route-level pages (Home, auth flows)
+    - `lib/` — Utilities
+  - `public/` — Static assets
+  - `index.html`, `vite.config.ts`, `tsconfig.json` — build and tooling config
+
+  ## Features
+
+  - React + TypeScript with Vite for fast HMR
+  - Accessible UI primitives using Radix and Tailwind
+  - Form handling with `react-hook-form` and validation with `zod`
+
+  ## Contributing
+
+  - Create feature branches from `main` (or current default branch)
+  - Open PRs with a clear description and focused scope
+  - Run linting and ensure typechecks before submitting
+
+  ## License
+
+  Add a `LICENSE` file to the repository (for example, MIT). If you want, I can add a suggested `LICENSE` file.
+
